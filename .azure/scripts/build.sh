@@ -13,8 +13,8 @@ if [ ${JAVA_MAJOR_VERSION} -eq 1 ] ; then
 fi
 
 # Build with Maven
-mvn -e -V -B install
-mvn spotbugs:check
+mvn $MVN_ARGS install
+mvn $MVN_ARGS spotbugs:check
 
 # Push to Nexus
 if [ "$BUILD_REASON" == "PullRequest" ] ; then
@@ -24,6 +24,6 @@ elif [ "$BRANCH" = "refs/tags/*" ] && [ "$BRANCH" != "refs/heads/master" ]; then
 else
    if [ "${MAIN_BUILD}" = "TRUE" ] ; then
        echo "In master branch or in release tag - pushing to nexus"
-       make pushtonexus
+       ./.azure/scripts/push-to-nexus.sh
    fi
 fi

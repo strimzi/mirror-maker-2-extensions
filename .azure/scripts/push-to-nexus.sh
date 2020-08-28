@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-openssl aes-256-cbc -K $encrypted_9bb2e0bcb75b_key -iv $encrypted_9bb2e0bcb75b_iv -in .travis/signing.gpg.enc -out signing.gpg -d
-gpg --import signing.gpg
+export GPG_TTY=$(tty)
 
-GPG_EXECUTABLE=gpg mvn -B -DskipTests -s ./.travis/settings.xml -P ossrh clean package gpg:sign deploy
+echo $GPG_SIGNING_KEY | base64 -d > signing.gpg
+gpg --batch --import signing.gpg
+
+GPG_EXECUTABLE=gpg mvn $MVN_ARGS -DskipTests -s ./.azure/scripts/settings.xml -P ossrh verify deploy
 
 rm -rf signing.gpg
 gpg --delete-keys
