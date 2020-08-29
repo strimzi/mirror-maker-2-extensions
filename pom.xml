@@ -14,7 +14,8 @@
 	</licenses>
 
     <name>Mirror Maker 2 Extensions</name>
-	<description>Extensions for MirrorMaker2</description>
+    <description>Extensions for MirrorMaker2</description>
+    <url>https://strimzi.io/</url>
 
     <scm>
         <connection>scm:git:git://github.com/strimzi/mirror-maker-2-extensions.git</connection>
