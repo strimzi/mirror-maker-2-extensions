@@ -19,7 +19,7 @@ mvn $MVN_ARGS spotbugs:check
 # Push to Nexus
 if [ "$BUILD_REASON" == "PullRequest" ] ; then
     echo "Building Pull Request - nothing to push"
-elif [ "$BRANCH" != "refs/tags/*" ] && [ "$BRANCH" != "refs/heads/master" ]; then
+elif [[ "$BRANCH" != "refs/tags/"* ]] && [ "$BRANCH" != "refs/heads/master" ]; then
     echo "Not in master branch or in release tag - nothing to push"
 else
    if [ "${MAIN_BUILD}" = "TRUE" ] ; then
