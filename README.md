@@ -6,8 +6,10 @@
 This repository is an extensions library for use with Mirror Maker 2.
 It allows for example usage of custom replication policies.
 
-
 ## Identity Replication Policy
+
+**Note: From Kafka 3.0.0, Apache Kafka now has its own _Identity Replication Policy_: `org.apache.kafka.connect.mirror.IdentityReplicationPolicy`.
+When using Kafka 3.0.0 and newer, you should use the Apache Kafka policy instead of the Strimzi policy which will be archived in the future.**
 
 MirrorMaker v2 (MM2), which ships as part of Apache Kafka in version 2.4.0 and above, detects and 
 replicates topics, topic partitions, topic configurations and topic ACLs to the destination cluster that matches a regex topic pattern. 

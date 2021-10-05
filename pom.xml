@@ -80,7 +80,7 @@
         <license.maven.version>2.11</license.maven.version>
         <maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
 
-        <kafka.version>2.6.0</kafka.version>
+        <kafka.version>3.0.0</kafka.version>
 
         <!-- property to skip surefire tests during failsafe execution -->
         <skip.surefire.tests>${skipTests}</skip.surefire.tests>
@@ -123,7 +123,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
+            <version>1.7.30</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

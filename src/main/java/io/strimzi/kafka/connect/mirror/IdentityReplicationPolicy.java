@@ -26,7 +26,6 @@ import org.slf4j.LoggerFactory;
  */
 
 public class IdentityReplicationPolicy extends DefaultReplicationPolicy {
-
     private static final Logger log = LoggerFactory.getLogger(IdentityReplicationPolicy.class);
 
     private String sourceClusterAlias;
@@ -54,7 +53,6 @@ public class IdentityReplicationPolicy extends DefaultReplicationPolicy {
 
     @Override
     public String upstreamTopic(String topic) {
-        return null;
+        return topic;
     }
-
 }
