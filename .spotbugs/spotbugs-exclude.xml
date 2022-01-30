@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FindBugsFilter>
-  <!-- Empty so far -->
+  <Match>
+    <Class name="io.strimzi.kafka.connect.mirror.IdentityReplicationPolicy" />
+    <Bug pattern="NM_SAME_SIMPLE_NAME_AS_SUPERCLASS" />
+  </Match>
 </FindBugsFilter>
