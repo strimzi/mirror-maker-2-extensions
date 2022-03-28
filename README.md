@@ -5,7 +5,7 @@
 
 ## Identity Replication Policy
 
-Replication policies in Apache Kafka MirrorMaker 2 define how will the mirrored topics be named on the target cluster.
+Replication policies in [Apache Kafka®](https://kafka.apache.org) MirrorMaker 2 define how will the mirrored topics be named on the target cluster.
 The default replication policy prefixes the topic names with the name of the source cluster.
 Users can provide and configure their own replication policies.
 
